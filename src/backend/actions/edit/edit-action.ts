@@ -44,6 +44,8 @@ export const EditAction: Action<RecordActionResponse> = {
 
     // eslint-disable-next-line no-param-reassign
     context.record = populatedRecord
+    context.record.params["_id"] = request.payload._id
+
 
     if (record.isValid()) {
       return {
